@@ -1,0 +1,10 @@
+
+Code for replicating experiments in "Tackling Diverse Tasks via Cross-Modal Transfer Learning"
+
+Setup: run start_up.sh to install otdd library and precomputed language source features for RoBERTa. Then, download datasets using datasets/download.sh.
+
+1. To run ORCA on the set of 13 tasks in Table 2: python3 main.py --config configs/task.yaml
+
+2. To run standard full fine-tuning without embedding learning in Table 3: fist change the "ep_tune_start" field in the config file to "0", then run python3 main.py --config configs/task.yaml
+
+3. To run ORCA or fine-tuning with only tuning the layernorm parameters (as in the FPT setting): first change the "finetune_method" field in the config file to "layernorm", then run python3 main.py --config configs/task.yaml
